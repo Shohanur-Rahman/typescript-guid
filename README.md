@@ -27,3 +27,11 @@ function watchTask(){
 exports.default = gulp.series(buildScript, watchTask)
 ```
 - hit gulp in vs code
+
+
+# Project Structue
+
+- initialize typescript configuration file
+```
+tsc --init
+```
