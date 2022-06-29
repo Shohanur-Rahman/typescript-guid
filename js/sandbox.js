@@ -1,52 +1,19 @@
-var human = {
-    name: "John",
-    age: 25,
-    eye: 2,
-    firstName: "John",
-    lastName: "Doe",
-    parentsInfo: {
-        fatersInfo: {
-            fatersName: "Mark",
-            phoneNumber: "015554",
-            country: "United Kingdom"
-        },
-        mothersInfo: {
-            fatersName: "Alisha",
-            phoneNumber: "015554",
-            country: "United Kingdom"
-        }
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
     }
-};
-var mixed = [];
-mixed.push("John Doe");
-mixed.push(20);
-mixed.push("USA");
-mixed.push(true);
-var greet = function () {
-    console.log("Hello World!");
-};
-var add = function (a, b, c) {
-    if (c === void 0) { c = 10; }
-    return a + b;
-};
-var printSum = function (a, b, c) {
-    if (c === void 0) { c = 10; }
-    console.log(a + b);
-};
-var calc;
-calc = function (numOne, numTwo, action) {
-    if (action == "add") {
-        return numOne + numTwo;
-    }
-    else if (action == "sub") {
-        return numOne - numTwo;
-    }
-    else if (action == "mul") {
-        return numOne * numTwo;
-    }
-    else if (action == "div") {
-        return numOne / numTwo;
-    }
-    return numOne + numTwo;
-};
-console.log(calc(5, 8, "mul"));
+    Invoice.prototype.format = function () {
+        return "".concat(this.client, " owes $ ").concat(this.amount, " for ").concat(this.details);
+    };
+    return Invoice;
+}());
+var invOne = new Invoice("Jack", "Work in USA", 9585);
+var invTwo = new Invoice("Maria", "Work in UK", 8585);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+invoices.forEach(function (invoice) {
+    console.log(invoice.client);
+});
