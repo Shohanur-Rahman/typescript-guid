@@ -35,3 +35,4 @@ exports.default = gulp.series(buildScript, watchTask)
 ```
 tsc --init
 ```
+- Enable rootDir and out outDir
